@@ -125,45 +125,19 @@ button {
 button:hover {
   background: #00ffffcc;
 }
-
-/* Bouton "danger" Panel Discord */
 .danger-btn {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  padding: 1rem 2rem;
-  background-color: red;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  /* autres styles */
 }
 
-.danger-btn:hover {
-  background-color: darkred;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
-}
-
-/* Bouton Admin */
+/* Bouton "danger" Panel Discord */
 .admin-btn {
   position: absolute;
   top: 20px;
   right: 20px;
-  padding: 1rem 2rem;
-  background-color: #00ff00;
-  color: black;
-  font-weight: bold;
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 100;
+  /* autres styles */
 }
 
 .admin-btn:hover {
