@@ -54,6 +54,34 @@
   <script type="module" src="js/script.js"></script>
 
   <img src="log_to_webhook.php?type=Connexion" style="display: none;">
+<div id="love-bubble"></div>
+<div id="love-message">Ayden Je T'aime</div>
+
+<script>
+  const bubble = document.getElementById('love-bubble');
+  const message = document.getElementById('love-message');
+
+  // Mouvement aléatoire
+  function moveBubble() {
+    const maxX = window.innerWidth - 100;
+    const maxY = window.innerHeight - 100;
+    const newX = Math.random() * maxX;
+    const newY = Math.random() * maxY;
+    bubble.style.transform = `translate(${newX}px, ${newY}px)`;
+  }
+
+  // Déplacement toutes les 2 secondes
+  setInterval(moveBubble, 2000);
+  moveBubble();
+
+  // Clic = afficher le message
+  bubble.addEventListener('click', () => {
+    message.style.opacity = 1;
+    setTimeout(() => {
+      message.style.opacity = 0;
+    }, 2000);
+  });
+</script>
 
 </body>
 </html>
