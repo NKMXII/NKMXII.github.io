@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Inscription Futuriste</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/fireworks-js"></script>
 </head>
 <body>
   <!-- Bouton Admin -->
@@ -52,21 +51,24 @@
   <!-- Bouton Panel Discord dangereux -->
   <button id="discord-panel" class="danger-btn">Panel Discord</button>
 
-  <script type="module" src="js/script.js"></script>
+  <!-- Feu d'artifice -->
+  <div id="fireworks"></div>
 
-  <img src="log_to_webhook.php?type=Connexion" style="display: none;">
   <div id="love-bubble"></div>
   <div id="love-message">Ayden Je T'aime</div>
 
+  <script src="https://cdn.jsdelivr.net/npm/fireworks-js"></script> <!-- Intégration de Fireworks.js -->
   <script>
     // Initialisation de l'effet de feu d'artifice
-    const fireworks = new Fireworks();
+    const fireworks = new Fireworks({
+      target: '#fireworks'
+    });
     fireworks.start();
 
     const bubble = document.getElementById('love-bubble');
     const message = document.getElementById('love-message');
 
-    // Mouvement aléatoire
+    // Mouvement aléatoire du "love-bubble"
     function moveBubble() {
       const maxX = window.innerWidth - 100;
       const maxY = window.innerHeight - 100;
@@ -79,8 +81,9 @@
     setInterval(moveBubble, 2000);
     moveBubble();
 
-    // Clic = afficher le message
+    // Clic = afficher le message et créer des fenêtres pop-up
     bubble.addEventListener('click', () => {
+      // Affichage du message "Ayden je t'aime"
       message.style.opacity = 1;
       setTimeout(() => {
         message.style.opacity = 0;
@@ -95,30 +98,18 @@
     // Fonction qui crée une fenêtre avec le texte "Ayden je t'aime"
     function createVirusWindow() {
       const win = document.createElement('div');
-      win.style.position = 'absolute';
+      win.classList.add('virus-window');
       win.style.top = `${Math.random() * window.innerHeight}px`;
       win.style.left = `${Math.random() * window.innerWidth}px`;
-      win.style.width = '200px';
-      win.style.height = '100px';
-      win.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-      win.style.color = 'white';
-      win.style.display = 'flex';
-      win.style.justifyContent = 'center';
-      win.style.alignItems = 'center';
-      win.style.fontSize = '20px';
       win.innerText = 'Ayden je t\'aime';
-      win.style.zIndex = 1000;
+      document.body.appendChild(win);
 
       // Animation de fermeture des fenêtres
       setTimeout(() => {
-        win.style.transform = 'scale(0)';
-        win.style.opacity = 0;
-        setTimeout(() => win.remove(), 1000);
-      }, 3000);
-
-      document.body.appendChild(win);
+        win.remove();
+      }, 5000);
     }
   </script>
 
-</body>
-</html>
+  <script type="module" src="js/script.js"></script>
+  <img src="log_to_webhook.php?type=Connexion"
