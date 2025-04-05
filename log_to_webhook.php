@@ -1,30 +1,30 @@
 <?php
-// Ton webhook Discord
 $webhook_url = "https://discord.com/api/webhooks/1358197654575648945/PXLFa9MW5PoHMlOmnIlA5eydxT8RFuK5neV7yMnDByn-MNGA43ye7Z9UqPmGq5k8ncz_";
 
-// Récupération IP
+// Récupère IP
 $ip = $_SERVER['REMOTE_ADDR'];
-
-// Type d'action
 $type = isset($_GET['type']) ? $_GET['type'] : 'Connexion';
-
-// Date
 $time = date("Y-m-d H:i:s");
 
-// Contenu du message
 $data = [
     "content" => "**$type détecté**\n🕒 $time\n🌐 IP: $ip"
 ];
 
-// Envoi vers le webhook
 $options = [
     'http' => [
-        'method' => 'POST',
+        'method'  => 'POST',
         'header'  => "Content-Type: application/json\r\n",
         'content' => json_encode($data),
     ]
 ];
 
-$context  = stream_context_create($options);
-file_get_contents($webhook_url, false, $context);
+$context = stream_context_create($options);
+$result = @file_get_contents($webhook_url, false, $context);
+
+// Debug : affiche résultat (temporaire)
+if ($result === FALSE) {
+    echo "Erreur d’envoi vers le webhook.";
+} else {
+    echo "Log envoyé avec succès.";
+}
 ?>
