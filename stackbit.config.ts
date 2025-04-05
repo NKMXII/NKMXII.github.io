@@ -1,9 +1,8 @@
-import { defineStackbitConfig } from '@stackbit/types';
+import { defineConfig } from 'vite'
 
-export default defineStackbitConfig({
-    "stackbitVersion": "~0.6.0",
-    "nodeVersion": "18",
-    "ssgName": "custom",
-    "contentSources": [],
-    "postInstallCommand": "npm i --no-save @stackbit/types"
+export default defineConfig({
+  base: '/NKMXII.github.io/',
+  build: {
+    outDir: 'dist'
+  }
 })
