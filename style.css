@@ -144,3 +144,31 @@ button:hover {
   background-color: #00cc00;
   box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
 }
+#love-bubble {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff0080, #8000ff);
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 1.2s ease;
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.6);
+}
+
+#love-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Courier New', monospace;
+  font-size: 28px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ff69b4;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #ff69b4;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2000;
+}
