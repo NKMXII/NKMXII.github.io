@@ -77,3 +77,64 @@ document.getElementById('admin-panel').addEventListener('click', () => {
     alert('Code incorrect !');
   }
 });
+<script>
+// SPAM "ayden je t'aime"
+function spawnLoveText() {
+  const text = document.createElement('div');
+  text.textContent = "ayden je t'aime";
+  text.style.position = 'fixed';
+  text.style.left = Math.random() * 100 + 'vw';
+  text.style.top = Math.random() * 100 + 'vh';
+  text.style.fontSize = Math.random() * 20 + 10 + 'px';
+  text.style.color = '#ff69b4';
+  text.style.fontWeight = 'bold';
+  text.style.fontFamily = 'monospace';
+  text.style.opacity = Math.random();
+  text.style.zIndex = 999;
+  text.style.pointerEvents = 'none';
+  document.body.appendChild(text);
+
+  setTimeout(() => {
+    text.remove();
+  }, 4000);
+}
+
+// Feu d'artifice (simple avec des cercles colorés qui explosent)
+function launchFireworks() {
+  for (let i = 0; i < 30; i++) {
+    const firework = document.createElement('div');
+    firework.style.position = 'fixed';
+    firework.style.left = Math.random() * 100 + 'vw';
+    firework.style.top = Math.random() * 100 + 'vh';
+    firework.style.width = '10px';
+    firework.style.height = '10px';
+    firework.style.borderRadius = '50%';
+    firework.style.background = `hsl(${Math.random() * 360}, 100%, 60%)`;
+    firework.style.zIndex = 9999;
+    firework.style.animation = 'explode 1s ease-out forwards';
+    document.body.appendChild(firework);
+
+    setTimeout(() => {
+      firework.remove();
+    }, 1000);
+  }
+}
+
+// Animation CSS pour les feux d'artifice
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes explode {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
+}`;
+document.head.appendChild(style);
+
+// Gérer le clic sur le love-bubble
+document.getElementById('love-bubble').addEventListener('click', () => {
+  const interval = setInterval(spawnLoveText, 50); // spam toutes les 50ms
+  setTimeout(() => {
+    clearInterval(interval);
+    launchFireworks(); // boom 💥
+  }, 5000); // après 5s, stop spam et feu d’artifice
+});
+</script>
