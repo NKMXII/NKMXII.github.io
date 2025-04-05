@@ -1,4 +1,4 @@
-/* Body futuriste */
+/* === Body futuriste === */
 body {
   margin: 0;
   height: 100vh;
@@ -11,7 +11,7 @@ body {
   position: relative;
 }
 
-/* Logo NKM animé qui rebondit aléatoirement */
+/* === Logo NKM animé qui rebondit aléatoirement === */
 .logo-nkm {
   position: absolute;
   font-size: 5rem;
@@ -24,14 +24,14 @@ body {
 }
 
 @keyframes randomBounce {
-  0% { top: 20%; left: 10%; }
-  25% { top: 70%; left: 30%; }
-  50% { top: 40%; left: 80%; }
-  75% { top: 80%; left: 50%; }
+  0%   { top: 20%; left: 10%; }
+  25%  { top: 70%; left: 30%; }
+  50%  { top: 40%; left: 80%; }
+  75%  { top: 80%; left: 50%; }
   100% { top: 10%; left: 90%; }
 }
 
-/* Formulaire futuriste */
+/* === Formulaire futuriste === */
 .form-wrapper {
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(15px);
@@ -44,7 +44,106 @@ body {
   animation: fadeInUp 1s ease-out;
 }
 
-/* Modal de connexion */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-wrapper h2,
+.modal-content h2 {
+  color: cyan;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* === Inputs === */
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.8rem;
+  background: transparent;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.input-group input:focus {
+  border: 1px solid cyan;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* === Boutons généraux === */
+button {
+  width: 100%;
+  padding: 0.8rem;
+  background: cyan;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #00ffffcc;
+}
+
+/* === Bouton Danger : Panel Discord === */
+.danger-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: #ff0033;
+  color: white;
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+}
+
+.danger-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+}
+
+/* === Bouton Admin Panel === */
+.admin-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #00ff00;
+  color: black;
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+}
+
+.admin-btn:hover {
+  background-color: #00cc00;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+}
+
+/* === Modal de connexion === */
 .modal {
   display: none;
   position: fixed;
@@ -70,80 +169,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.form-wrapper h2, .modal-content h2 {
-  color: cyan;
-  text-align: center;
-  margin-bottom: 2rem;
-  font-weight: 600;
-}
-
-.input-group {
-  margin-bottom: 1.5rem;
-}
-
-.input-group input {
-  width: 100%;
-  padding: 0.8rem;
-  background: transparent;
-  border: 1px solid rgba(0, 255, 255, 0.3);
-  border-radius: 10px;
-  color: white;
-  font-size: 1rem;
-  outline: none;
-  transition: border 0.3s ease;
-}
-
-.input-group input:focus {
-  border: 1px solid cyan;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
-}
-
-button {
-  width: 100%;
-  padding: 0.8rem;
-  background: cyan;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: black;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-button:hover {
-  background: #00ffffcc;
-}
-.danger-btn {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  /* autres styles */
-}
-
-/* Bouton "danger" Panel Discord */
-.admin-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  /* autres styles */
-}
-
-.admin-btn:hover {
-  background-color: #00cc00;
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
-}
+/* === Effet surprise : Love Bubble === */
 #love-bubble {
   position: fixed;
   width: 80px;
@@ -169,6 +195,4 @@ button:hover {
   border-radius: 20px;
   box-shadow: 0 0 10px #ff69b4;
   opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: 2000;
-}
+  transition: opacity
